@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+問題反應
+{% endblock %}
+
+{% block css %}
+<link href="{{ url_for('static',filename='css/message.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+	<div style="margin-top: 45px"></div>
+
+	<div id="message">
+		<p class="subject">問題反應</p>
+
+		<form class="contact_form" action="/addMessage" method="post">
+			<div class="form-group">
+				<label>姓名</label>
+				<input type="text" name="cuname" class="form-control" required />
+			</div>
+
+			<div class="form-group">
+				<label>Email</label>
+				<input type="email" name="email" class="form-control" required />
+			</div>
+
+			<div class="form-group">
+				<label>主旨</label>
+				<input type="text" name="title" class="form-control" required />
+			</div>
+
+			<div class="form-group">
+				<label>反應內容</label>
+				<textarea name="content" rows="10" class="form-control" required></textarea>
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="btn_submit">送出訊息</button>
+			</div>
+
+		</form>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+首頁
+{% endblock %}
+
+{% block css %}
+<link href="{{ url_for('static',filename='css/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+<div id="hot" style="width: 100%; ">
+
+	<p style="color: #c85554;font-size: 22px;font-weight: bold; ">熱門景點</p>
+
+	{% for row in travel %} <!--  找出在資料庫中的位置 -->
+
+		<div class="info" style="width:22%; float: left; height: 350px; padding: 2%;">
+			<img src="{{row[4]}}">
+			<p>{{row[1]}}</p>
+			<span>NT: {{row[2]}}</span>
+		</div>
+	{% endfor %}
+
+	<div style="clear: both;" />
+
+	<p style="color: #c85554;font-size: 22px;font-weight: bold; ">最新產品</p>
+
+	{% for row in goods %}
+
+		<div class="info" style="width:22%; float: left; height: 350px; padding: 2%;">
+			<img src="{{row[4]}}">
+			<p>{{row[2]}}</p>
+			<span>NT: {{row[3]}}</span>
+		</div>
+	{% endfor %}
+
+</div>
+
+{% endblock %}

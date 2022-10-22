@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+商品列表
+{% endblock %}
+
+{% block css %}
+<link href="{{ url_for('static',filename='css/product.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+<div id="search" style="width: 60%; margin-left: 35%; font-size: 20px;">
+
+	<form action="/product" method="get">
+		商品名稱：<input type="text" style="font-size: 20px;" name="goodsname" />
+		<input type="submit" style="font-size:20px;" value="查詢" />
+	</form>
+</div>
+
+<div id="goodsArea">
+
+	{% for row in result %}
+
+		<div class="info">
+			<a href="{{row[5]}}" target="_blank">
+				<img src="{{row[4]}}">
+			</a>
+			<p>{{row[2]}}</p>
+			<span>NT: {{row[3]}}</span>
+
+		</div>
+
+	{% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+熱門景點
+{% endblock %}
+
+{% block css %}
+<link href="{{ url_for('static',filename='css/travel.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+<div id="travelArea" >
+
+  {% for travel in result %}	
+
+	<div class="info">
+		<a href="{{travel[5]}}" target="_blank"><img src="{{travel[4]}}"></a>
+		<p style="text-align: left;">{{travel[1]}}</p>
+		<p style="text-align: right; margin-right: 2.5%; padding-top: 1%;font-weight: bold;">NT: {{travel[2]}}</p>
+	</div>	
+
+  {% endfor %}
+
+ </div>
+
+
+{% endblock %}

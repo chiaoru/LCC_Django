@@ -1,0 +1,47 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+
+	<link href="{{ url_for('static',filename='css/base.css') }}" rel="stylesheet">
+
+	{% block css %}
+	{% endblock %}
+</head>
+<body>
+
+	<div id="wrapper">
+	
+
+	<div id="banner">
+		<img src="{{ url_for('static',filename='images/logo.png') }}" style="float: left;margin-left: 5%;">
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li><a href="/">首頁</a></li>
+			<li><a href="/product">產品</a></li>
+			<li><a href="/news">新聞</a></li>
+			<li><a href="/travel">旅遊</a></li>
+			<li><a href="/message">問題</a></li>
+		</ul>
+	</div>
+
+	<div id="content">
+		<div id="goodsArea">
+			{% block main %}
+			{% endblock %}
+		</div>
+	</div>
+
+	</div>
+
+	<div id="footer">
+		聯成 Flask 網頁
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+body{
+	width: 100%;
+	height: 100%;
+	font-family: 微軟正黑體,sans-serif,Arial,標楷體;
+	font-size: 17px; /* 字型大小 */
+	margin: 0; /* margin 外部距離，上下左右的距離都是 0 */
+
+}
+
+#wrapper{
+	min-height: 100%; /* 這個區段的最低高度為 100% */
+	margin-bottom: -60px; /* 將區段的高度內縮 60px ??? 主要是 footer 的高度會設置為 60px */
+		/* margin-bottom 底部距離外部有多少 */
+}
+
+#banner{
+	width: 100%;
+	height: 50px;
+}
+
+#banner img{
+    margin-left: 12px;
+} 
+
+
+#menu{
+	width: 100%;
+	height: 55px;
+	background-color: #d74b22; /* RGB 色票 https://color.adobe.com/zh/create */
+}
+
+#menu ul{
+	padding-left: 35%;
+	line-height: 55px;
+}
+
+
+
+#menu li{
+	float: left;
+	padding-left: 1em; /* padding-left 左邊的內部距離， 畫面比例來算 */
+	padding-right: 2em;
+	list-style: none; /* 面目編號不要出來 none 沒有 */
+}
+
+#menu a{
+	color: #ffffff; /* 字的顏色是白色 */
+	text-decoration: none; /* 超連結不要有底線 */
+	font-weight: bold; /* 裡面的字是粗體 */
+	font-size: 20px;
+}
+
+#content{
+	width: 100%;
+	
+	/* background-color: #e3a29c;  #00ff00 green 綠色 #f08080 亮珊瑚色 */
+
+
+}
+
+#footer{
+	height: 60px;
+	width: 100%;
+	background-color: #542d24;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 10px;
+	clear: both; /* 清除浮板，左右都清掉 */
+	line-height: 60px;
+}

@@ -1,0 +1,52 @@
+#hot{
+	padding-top: 35px;
+	margin-bottom: 10px;
+	width: 90%;
+	
+	
+
+}
+
+#hot p{
+	width: 70%;
+	margin-left: 5%;
+	margin-bottom: -20px;
+}
+
+.info{
+	float:left; 
+	
+	margin:1.5%;
+	
+	padding-bottom: 1%;
+	padding-top: 0.2%;
+	margin-left: 5%;
+	border-radius: 15px; 
+
+
+}
+
+.info img{
+	margin: 2%;
+	
+	width: 100%;
+	height: 70%;
+	
+	margin-top: 2%;
+	border-radius: 20px; 
+}
+
+
+.info p{
+	height: 50px;
+	text-align: center;
+	font-size: 16px;
+	margin-top: 0px;
+	padding-left: 8%;
+	padding-bottom: 12%;
+}
+
+.info span{
+	margin-left: 77%; 
+	font-weight: bold;
+}

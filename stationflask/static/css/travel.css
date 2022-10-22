@@ -1,0 +1,46 @@
+
+
+.info{
+	float:left; 
+	width:19.5%; 
+	height: 55%;
+	margin:1%;
+	margin-top: 20px;
+	
+	
+	margin-left: 3.5%;
+	border-radius: 15px; 
+
+}
+
+.info img{
+	margin: 3%;
+	margin-left: 9.5%;
+	width: 80%;
+	height: 60%;
+	
+	border-radius: 50%; 
+	border: 2.5px solid #ea930a;
+}
+
+.info p{
+	height: 60px;
+	
+	font-size: 16px;
+	padding-left: 5%;
+	margin-bottom: -7px;
+	font-size: 19px;
+	margin-block-start: 0.5em;
+	margin-block-end: 2.5em;
+}
+
+
+#travelArea{
+	
+	padding-top: 15px;
+	margin-bottom: 50px;
+	width: 100%;
+	
+	
+	
+}

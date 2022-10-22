@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+新聞列表
+{% endblock %}
+
+{% block css %}
+<link href="{{ url_for('static',filename='css/news.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+<div id="newsArea">
+
+	<div id='search' style="margin-left: 17%; width: 50%;font-size: 20px; color:#002665">
+			<form action="/news" method="get">
+				新聞平台：<select name="station" style="border-radius: 8px; height: 22px;"> <!-- 用下拉式選單來選擇想要的新聞平台 -->
+							<option value="三立新聞">三立新聞</option>
+							<option value="TVBS">TVBS</option>
+							<option value="東森新聞">東森新聞</option>
+						</select>
+						<input type="submit" style="color:b23e25; font-size: 16px; cursor: pointer;" value="查詢" />
+
+			
+			</form>			
+		</div>
+
+
+	<!--  goods 為 views.py 中的字典 {'goods':allGoods} 中的 key -->
+  	{% for row in result %}
+
+  	<div class="news">
+
+  		<div class="newsImg">
+  		{% if row[4] == '' %}
+			<a href="{{row[5]}}" target="_blank"><img src="{{ url_for('static',filename='images/news.jpeg') }}"></a>
+			<!-- target="_blank" 跳新分頁 -->
+		{% else %}
+			<a href="{{row[5]}}" target="_blank"><img src="{{row[4]}}"></a>
+		{% endif %}
+		</div>
+
+		<div class="newsType">
+  		{% if row.category == '' %}
+			<p>一般</p>
+		{% else %}
+			<p>{{row[3]}}</p>
+		{% endif %}
+		</div>
+
+		<div class="newsTitle">
+		<p style="text-align: left; ">{{row[2]}}</p>
+		</div>
+
+	</div>	
+
+	{% endfor %}
+
+
+</div>
+
+{% endblock %}
