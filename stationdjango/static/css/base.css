@@ -1,0 +1,223 @@
+/*
+
+id 在 html 中只會有一個名稱
+
+class 在 html 中會有很多個，這個設定讓很多的 html 標籤使用
+在css中以 . 開始來設定class
+
+也可以直接設定 html 的標準標籤，如：a、img、body...
+在css中直接以 html 標籤來設定
+如是標準標籤中的內容，如id，則以 # 開始來設定
+
+*/
+
+body{
+	width: 100%;
+	height: 100%;
+	font-family: 微軟正黑體,sans-serif,Arial,標楷體;
+	font-size: 17px; /* 字型大小 */
+	margin: 0; /* margin 外部距離，上下左右的距離都是 0 */
+
+}
+
+p{
+
+}
+
+#wrapper{
+	min-height: 100%; /* 這個區段的最低高度為 100% */
+	margin-bottom: -60px; /* 將區段的高度內縮 60px ??? 主要是 footer 的高度會設置為 60px */
+		/* margin-bottom 底部距離外部有多少 */
+}
+
+#banner{
+	width: 100%;
+	height: 50px;
+}
+
+#banner img{
+    margin-left: 12px;
+} 
+
+
+.login{
+	
+	border-radius: 5px;
+	margin-right: 0.1%;
+	text-decoration: none;
+	cursor: pointer;
+	position: absolute;
+	right: 70px;
+	top: 40px;
+	color: #ffffff;
+	background-color: #4d5aaf;
+	font-size: 16px;
+	height: 25px;
+	width: 40px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.register{
+	border-radius: 5px;
+	margin-right: 0%;
+	text-decoration: none;
+	cursor: pointer;
+	position: absolute;
+	right: 25px;
+	top: 40px;
+	color: #ffffff;
+	background-color: #4d5aaf;
+	font-size: 16px;
+	height: 25px;
+	width: 40px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.member{
+	border-radius: 5px;
+	margin-right: 6.5%;
+	text-decoration: none;
+	cursor: pointer;
+	position: absolute;
+	right: 25px;
+	top: 40px;
+	color: #ffffff;
+	background-color: #4d5aaf;
+	font-size: 16px;
+	height: 25px;
+	width: 75px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.orderlist{
+	border-radius: 5px;
+	margin-right: 12.2%;
+	text-decoration: none;
+	cursor: pointer;
+	position: absolute;
+	right: 25px;
+	top: 40px;
+	color: #ffffff;
+	background-color: #4d5aaf;
+	font-size: 16px;
+	height: 25px;
+	width: 75px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.Cookie{
+	
+	position: absolute;
+	right: 30px;
+	top: -16px;
+	font-size: 23px;
+	height: 20px;
+	
+}
+
+
+#menu{
+	width: 100%;
+	height: 55px;
+	background-color: #d74b22; /* RGB 色票 https://color.adobe.com/zh/create */
+}
+
+#menu ul{
+	padding-left: 33%;
+	line-height: 55px;
+}
+
+
+
+#menu li{
+	float: left;
+	padding-left: 1em; /* padding-left 左邊的內部距離， 畫面比例來算 */
+	padding-right: 2em;
+	list-style: none; /* 面目編號不要出來 none 沒有 */
+}
+
+#menu a{
+	color: #ffffff; /* 字的顏色是白色 */
+	text-decoration: none; /* 超連結不要有底線 */
+	font-weight: bold; /* 裡面的字是粗體 */
+	font-size: 20px;
+}
+
+#content{
+	width: 100%;
+	
+	/* background-color: #e3a29c;  #00ff00 green 綠色 #f08080 亮珊瑚色 */
+
+
+}
+
+#footer{
+	height: 60px;
+	width: 100%;
+	background-color: #542d24;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 10px;
+	clear: both; /* 清除浮板，左右都清掉 */
+	line-height: 60px;
+}
+
+@media only screen and (max-device-width: 1024px){
+
+#menu ul{
+	padding-left: 25%;
+	line-height: 55px;
+}
+
+.member{
+	border-radius: 5px;
+	margin-right: 9.5%;
+	text-decoration: none;
+	cursor: pointer;
+	position: absolute;
+	right: 25px;
+	top: 40px;
+	color: #ffffff;
+	background-color: #4d5aaf;
+	font-size: 16px;
+	height: 25px;
+	width: 75px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.orderlist{
+	border-radius: 5px;
+	margin-right: 18%;
+	text-decoration: none;
+	cursor: pointer;
+	position: absolute;
+	right: 25px;
+	top: 40px;
+	color: #ffffff;
+	background-color: #4d5aaf;
+	font-size: 16px;
+	height: 25px;
+	width: 75px;
+	text-align: center;
+	line-height: 25px;
+}
+
+#footer{
+	height: 50px;
+	width: 100%;
+	background-color: #542d24;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 10px;
+	clear: both; /* 清除浮板，左右都清掉 */
+	line-height: 50px;
+}
+
+}

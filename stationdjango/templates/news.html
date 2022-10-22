@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+產品列表
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/news.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{name}}</p>
+{% endblock %}
+
+
+{% block mainContent %}
+
+<div id="newsArea">
+
+	<div id='search' style="margin-left: 17%; width: 50%;font-size: 20px; color:#002665">
+			<form action="/news" method="get">
+				新聞平台：<select name="station" style="border-radius: 8px; height: 22px;"> <!-- 用下拉式選單來選擇想要的新聞平台 -->
+							<option value="三立新聞">三立新聞</option>
+							<option value="TVBS">TVBS</option>
+							<option value="東森新聞">東森新聞</option>
+						</select>
+						<input type="submit" style="color:b23e25; font-size: 16px; cursor: pointer;" value="查詢" />
+
+			
+			</form>			
+		</div>
+
+
+	<!--  goods 為 views.py 中的字典 {'goods':allGoods} 中的 key -->
+  	{% for row in allnews %}
+
+  	<div class="news">
+
+  		<div class="newsImg">
+  		{% if row.photo_url == '' %}
+			<a href="{{row.news_url}}" target="_blank"><img src="/static/images/news.jpeg"></a>
+			<!-- target="_blank" 跳新分頁 -->
+		{% else %}
+			<a href="{{row.news_url}}" target="_blank"><img src="{{row.photo_url}}"></a>
+		{% endif %}
+		</div>
+
+		<div class="newsType">
+  		{% if row.category == '' %}
+			<p>一般</p>
+		{% else %}
+			<p>{{row.category}}</p>
+		{% endif %}
+		</div>
+
+		<div class="newsTitle">
+		<p style="text-align: left; ">{{row.title}}</p>
+		</div>
+
+	</div>	
+
+	{% endfor %}
+
+
+
+     <div style="clear:both; height: 50px; text-align: center; ">
+
+		 {% if allnews.has_previous %}
+
+			<a href="?page={{allnews.previous_page_number}}&station={{station}}" style="text-decoration: none; color: #6c1912;" >上一頁</a>
+
+		 {% endif %}
+
+		 {% if allnews.has_next %}
+			<a href="?page={{allnews.next_page_number}}&station={{station}}" style="text-decoration: none; color: #6c1912;" >下一頁</a>
+
+
+		 {% endif %}
+
+	 </div>
+
+</div>
+
+{% endblock %}

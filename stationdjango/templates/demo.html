@@ -1,0 +1,104 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>範例</title>
+
+</head>
+<body>
+
+	<!--
+		html 註解
+	-->
+
+	{# 這個是 Django 註解 單行註解 #}
+
+	{% comment %}
+		這個是多行註解
+		多行註解
+		Django 的程式註解不會出現在網頁(原始碼)中
+	{% endcomment %}
+
+	<h1>{{name}}</h1>
+	<h1>{{age}}</h1>
+	
+
+{# if 判斷式 #}
+	{% if age >= 16 %}
+		<h1>南部要過成年禮</h1>
+
+	{% endif %}
+
+{# if else 判斷式 #}
+	{% if age >= 30 %}
+
+		<h1>熟女、熟男</h1>
+
+	{% else %}
+
+		<h1>少女、小鮮肉</h1>
+
+	{% endif %}
+
+{# if elif else 判斷式 #}
+	<h1>{{score}}</h1>
+
+	{% if score >= 90 %}
+		<h1>分數大於等於90分</h1>
+
+	{% elif score >= 80 %}
+		<h1>分數大於等於80分</h1>
+
+	{% elif score >= 70 %}
+		<h1>分數大於等於70分</h1>
+
+	{% elif score >= 60 %}
+		<h1>分數大於等於60分</h1>
+
+	{% else %}
+		<h1>分數不及格</h1>
+
+	{% endif %}
+
+{# for 迴圈 #}
+	{% for row in listdata %}
+		{{row}}
+	{% endfor %}
+
+
+
+	<hr>
+{# hr 分隔線 #}
+	{% for row in students %}
+
+	<ul>
+		<li>姓名：{{row.name}}</li>
+		<li>年齡：{{row.age}}</li>
+		<li>電話：{{row.phone}}</li>
+	</ul>
+
+
+	{% endfor %}
+
+	{{student1.name}}
+
+
+	<hr>
+{# reversed 反轉，資料從後面抓回來 #}
+	{% for row in students reversed %}
+
+{# forloop.counter 從1開始遞增到整個結束 #}
+	<h1>第{{forloop.counter}}位學生</h1>
+
+	<ul>
+		<li>姓名：{{row.name}}</li>
+		<li>年齡：{{row.age}}</li>
+		<li>電話：{{row.phone}}</li>
+	</ul>
+
+
+	{% endfor %}
+
+
+
+</body>
+</html>

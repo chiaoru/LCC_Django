@@ -1,0 +1,155 @@
+.info{
+	float:left; 
+	width:25%; 
+	height: 50%;
+	margin:1.5%;
+	margin-top: 30px;
+	padding-bottom: 1%;
+	padding-top: 0.2%;
+	border: 1.5px solid #cb8347;
+	margin-left: 5%;
+	border-radius: 15px; 
+
+
+}
+
+.info img{
+	margin: 3%;
+	
+	width: 75%;
+	height: 70%;
+	margin-left: 12%;
+	margin-top: 5%;
+	border-radius: 20px; 
+}
+
+
+.info p{
+	height: 50px;
+	
+	font-size: 16px;
+	padding-left: 5%;
+	margin-bottom: -7px;
+}
+
+#goodsArea{
+
+	margin-top: 35px;
+	margin-bottom: 30px;
+	width: 100%;
+
+}
+
+.cart_block{
+	position: relative;
+}
+
+.cart_block img{
+	
+	position: absolute;
+	bottom: 8px;
+	right: -5px;
+	display: block;
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	border-radius: 0px;
+
+}
+
+#formSearch{
+	width: 35%;
+	margin-left: 32%;
+	margin-bottom: 25px;
+	padding: 0.5px;
+	background-color: #fcd4d5;
+	border-radius: 15px;
+	height: 20%;
+	
+
+}
+
+#formSearch fieldset{
+	border-radius: 15px;
+	width: 90%;
+	margin: 2.25%;
+	
+
+}
+
+@media only screen and (max-device-width: 1024px){
+
+#formSearch{
+	width: 35%;
+	margin-left: 32%;
+	margin-bottom: 25px;
+	padding: 0.5px;
+	background-color: #fcd4d5;
+	border-radius: 15px;
+	height: 11%;
+	
+
+}
+
+#formSearch fieldset{
+	border-radius: 15px;
+	width: 85%;
+	margin: 2.25%;
+	
+
+}
+
+.info{
+	float:left; 
+	width:25%; 
+	height: 18%;
+	margin:1.5%;
+	margin-top: 30px;
+	padding-bottom: 1%;
+	padding-top: 0.2%;
+	border: 1.5px solid #cb8347;
+	margin-left: 5%;
+	border-radius: 15px; 
+
+
+}
+
+.info img{
+	margin: 3%;
+	
+	width: 65%;
+	height: 50%;
+	margin-left: 18%;
+	margin-top: 5%;
+	border-radius: 20px; 
+}
+
+.info p{
+	height: 60px;
+	
+	font-size: 16px;
+	padding-left: 5%;
+	margin-bottom: -7px;
+}
+
+
+.cart_block{
+	position: relative;
+}
+
+.cart_block img{
+	
+	position: absolute;
+	top: -42px;
+	right: -5px;
+	display: block;
+	width: 40px;
+	height: 30px;
+	text-align: center;
+	border-radius: 0px;
+
+}
+
+
+
+}

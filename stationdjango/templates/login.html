@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+會員登入
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/member.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{name}}</p>
+{% endblock %}
+
+{% block mainContent %}
+
+	<div style="margin-top: 100px"></div>
+
+	<center><p style="color: #ff0000;">{{msg}}</p></center>
+
+	<form action="" method="post">
+		{% csrf_token %}
+
+		<label >帳號：</label>
+		<input type="email" name="email" required placeholder="請填 Email" />
+
+		<label>密碼：</label>
+		<input type="password" name="password" required />
+
+		<button type="submit">登入</button>
+		<a href="/register" style="margin-left: 8px;">我要註冊</a>
+
+	</form>
+
+
+{% endblock %}

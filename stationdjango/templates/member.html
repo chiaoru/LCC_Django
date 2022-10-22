@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+會員專區
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/member.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{name}}</p>
+{% endblock %}
+
+{% block mainContent %}
+
+<div style="height: 30px;"></div>
+		
+<div class="container" style="text-align: center;" >
+	<h1>Hello, <strong style="color: #4d5aaf">{{name}}</strong> 歡迎回來！！</h1>
+</div>
+
+<table border="0" align="center" cellpadding="10" cellspacing="0">
+	<tr>
+		<td><input class="code" type="button" value="我的訂單" onClick="window.location='/orderlist/'" /></td>
+		<td><input class="code" type="button" value="更改密碼" onClick="window.location='/changepassword/'" /></td>
+		<td><input class="code" type="button" value="忘記密碼" onClick="window.location='/forget/'" /></td>
+	</tr>
+</table>
+
+
+{% endblock %}
+

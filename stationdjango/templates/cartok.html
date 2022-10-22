@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+購物車內容
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/cart.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{name}}</p>
+{% endblock %}
+
+{% block mainContent %}
+	
+	<div style="margin-top: 100px;"></div>
+
+	<div id="maindiv">
+		<p class="title">訂購完成資訊</p>
+		<p class="subject">非常感謝您的購買，我們會盡快處理您的訂單</p>
+		<p class="desc" style="padding-left:5%">親愛的 <strong>{{name}}</strong> (先生/小姐)，訂單已完成</p>
+		<p class="desc" style="padding-left:5%">訂單編號為 <strong style="color: red;">{{orderid}}</strong></p>
+		<p class="desc" style="padding-left:5%"><a href="/cartordercheck/?orderid={{orderid}}&customEmail={{email}}">訂單詳細內容</a></p>
+	</div>
+
+	<table border="0" style="padding-left: 40%;" align="center" cellpadding="10" cellspacing="0">
+			<tr>
+				<td><input type="button" value="繼續購物" style="font-size: 18px;" onClick="window.location='/product/'" /></td>
+				
+			</tr>
+	</table>
+
+{% endblock %}

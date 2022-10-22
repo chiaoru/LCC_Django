@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+台灣景點
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/travel.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{name}}</p>
+{% endblock %}
+
+
+{% block mainContent %}
+
+
+<form class="formSearch" action="" method="get">
+	<label for="tour" style="color:002665">旅遊查詢</label>
+	<input type="text" id="tour" name="tour" size="15" style="border-radius: 8px; height: 22px;" />
+	<button type="submit" style="color:b23e25; font-size: 16px; cursor: pointer;">查詢</button>
+</form>
+
+
+<div id="travelArea">
+
+  {% for travel in tour %}	
+
+	<div class="info">
+		<a href="{{travel.link}}" target="_blank"><img src="{{travel.photo_url}}"></a>
+		<p style="text-align: left;">{{travel.title}}</p>
+		<p style="text-align: right; margin-right: 2.5%; padding-top: 2%;font-weight: bold;">NT: {{travel.price}}</p>
+	</div>	
+
+  {% endfor %}
+
+  <div class="pages" style="clear: both; height: 40px; text-align: center; margin-right: 2%">
+  	
+  	{% if tour.has_previous %}
+
+  		<a href="?page={{tour.previous_page_number}}&tour={{t}}" style="text-decoration: none; color: #6c1912;">上一頁</a>
+
+  	{% endif %}
+
+  	{% if tour.has_next %}
+
+  		<a href="?page={{tour.next_page_number}}&tour={{t}}" style="text-decoration: none; color: #6c1912;">下一頁</a>
+
+  	{% endif %}
+
+
+  </div>
+
+</div>
+
+
+
+{% endblock %}
+
+
+<!--
+註解方式
+-->

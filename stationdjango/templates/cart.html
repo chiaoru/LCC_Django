@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+購物車內容
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/cart.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{name}}</p>
+{% endblock %}
+
+{% block mainContent %}
+
+<script>
+
+	function confirmlink(message){
+		if (message == ""){
+			message = "確定";
+		}
+	document.returnValue =  confirm(message);
+	}
+
+</script>
+
+<div style="margin-top: 100px;"></div>
+
+<div id="maindiv">
+
+	<form action="/addtocart/update/" method="post" name="form1" id="form1">
+
+		{% csrf_token %} <!-- 在django中，只要是post表單，一定要加入此行，否則送不出去，能夠防範駭客偽裝攻擊 -->
+
+		<table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+			<!-- cellpadding 內部距離 cellspacing 外部距離 -->
+
+			<tr>
+				<th width="60" align="left"><strong>取消</strong></th>  
+				<th align="left"><strong>商品名稱</strong></th> <!-- unit[0] -->
+				<th width="80" align="center"><strong>單價</strong></th> <!-- unit[1] -->
+				<th width="80" align="center"><strong>數量</strong></th> <!-- unit[2] -->
+				<th width="100" align="center"><strong>金額</strong></th> <!-- unit[3] -->
+			</tr>
+
+
+			<!-- allcart 在 cart.views中 -->
+			<!-- forloop.counter 由1開始遞增到結束; forloop.counter0 由0開始遞增到結束(從0開始是因為串列的索引值是從0開始的); -->
+
+			{% for unit in allcart %} 
+
+				<tr>
+					<td bgcolor="#ffffff"><a href="/addtocart/remove/{{forloop.counter0}}" class="delcart" onClick="confirmlink('確定刪除這個商品嗎？'); return document.returnValue">刪除</a></td>
+					<td align="left" bgcolor="#ffffff">{{unit.0}}</td>
+					<td width="80" align="center" bgcolor="#ffffff">$ {{unit.1}}</td>
+					<td width="80" align="center" bgcolor="#ffffff"><input type="text" name="quantity{{forloop.counter0}}" id="quantity{{forloop.counter0}}" value="{{unit.2}}" size="5"  /></td>
+					<td width="100" align="center" bgcolor="#ffffff"><strong>$ {{unit.3}}</strong></td>
+				</tr>
+
+
+
+			{% endfor %}
+
+			<tr>
+				<!-- colspan="4" 合併4個欄位 -->
+				<td colspan="4" align="right" bgcolor="#ffffff" class="upline"><strong>小記：</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline">$ {{total}}</td>
+			</tr>
+
+			<tr>
+				<td colspan="4" align="right" bgcolor="#ffffff" class="upline"><strong>運費：</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline">$ 100</td>
+			</tr>
+
+			<tr>
+				<td colspan="4" align="right" bgcolor="#ffffff" class="upline"><strong>總記：</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline"><strong><font color="#ff0000">$ {{grandtotal}}</font></strong></td>
+			</tr>
+
+		</table>
+
+		<table border="0" align="center" cellpadding="10" cellspacing="0">
+			<tr>
+				<!-- window.location='/product/' 從畫面導到產品頁 -->
+				<td><input type="button" name="Continue" value="繼續購物" onClick="window.location='/product/'" style="font-size: 20px;" /></td>
+				<td><input type="submit" name="Submit" value="更新購物車" style="font-size: 20px;"/></td>
+				<td><input type="button" name="Empty" onClick="window.location='/addtocart/empty/'" value="清空購物車" style="font-size: 20px;"/></td>
+				<td><input type="button" name="Order" onClick="window.location='/cartorder/'" value="我要結帳" style="font-size: 20px;"/></td>
+
+			</tr>
+
+		</table>
+
+
+
+
+	</form>
+
+</div>
+
+
+{% endblock %}

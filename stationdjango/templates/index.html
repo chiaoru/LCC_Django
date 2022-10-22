@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+首頁
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/index.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{uemail}}</p>
+{% endblock %}
+
+{% block mainContent %}
+
+<div id='hot'>
+	<p style="color: #c85554;font-size: 22px;font-weight: bold; ">最新新聞</p>
+
+	{% for row in hotnews %}
+
+	<div class="info">
+		<p style="text-align: left;  font-weight: bold;">{{row.category}}</p>
+		<a href="{{row.news_url}}" target="_blank"><img src="{{row.photo_url}}"></a>
+		<!-- target="_blank" 跳新分頁 -->
+		<p style="text-align: center; ">{{row.title}}</p>
+		
+	</div>	
+	{% endfor %}
+
+<p style="clear: both; height: 2px; text-align: center; "></p>
+	<p style="color: #c85554;font-size: 22px;font-weight: bold; ">最新產品</p>
+
+	{% for row in hotgoods %}
+
+	<div class="info">
+		<a href="{{row.goods_url}}" target="_blank"><img src="{{row.photo_url}}"></a>
+		<!-- target="_blank" 跳新分頁 -->
+		<p style="text-align: center; ">{{row.title}}</p>
+	</div>	
+	{% endfor %}
+
+<p style="clear: both; height: 2px; text-align: center; "></p>
+<p style="color: #c85554;font-size: 22px;font-weight: bold; ">熱門景點</p>
+
+	{% for row in hottour %}
+
+	<div class="info">
+		<a href="{{row.link}}" target="_blank"><img src="{{row.photo_url}}"></a>
+		<!-- target="_blank" 跳新分頁 -->
+		<p style="text-align: center; ">{{row.title}}</p>
+	</div>	
+	{% endfor %}
+
+
+</div>
+
+	
+	
+{% endblock %}

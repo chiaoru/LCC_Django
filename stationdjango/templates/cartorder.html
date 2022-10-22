@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+購物車內容
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/cart.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{name}}</p>
+{% endblock %}
+
+{% block mainContent %}
+
+<div style="margin-top: 50px;"></div>
+
+<div id="maindiv">
+
+	<form action="/cartok/" method="post" name="form1" id="form1">
+
+		{% csrf_token %} <!-- 在django中，只要是post表單，一定要加入此行，否則送不出去，能夠防範駭客偽裝攻擊 -->
+
+		<p class="title">訂單內容確認</p>
+		<p class="subject">購物清單</p>
+
+		<table width="85%" border="0" align="center" cellpadding="4" cellspacing="0">
+			<!-- cellpadding 內部距離 cellspacing 外部距離 -->
+
+			<tr>
+				<th align="left" style="font-size: 18px;"><strong>商品名稱</strong></th> <!-- unit[0] -->
+				<th width="80" align="center"><strong>單價</strong></th> <!-- unit[1] -->
+				<th width="80" align="center"><strong>數量</strong></th> <!-- unit[2] -->
+				<th width="100" align="center"><strong>金額</strong></th> <!-- unit[3] -->
+			</tr>
+
+
+			<!-- allcart 在 cart.views中 -->
+			<!-- forloop.counter 由1開始遞增到結束; forloop.counter0 由0開始遞增到結束(從0開始是因為串列的索引值是從0開始的); -->
+
+			{% for unit in allcart %} 
+
+				<tr>
+					<td align="left" bgcolor="#ffffff">{{unit.0}}</td>
+					<td width="80" align="center" bgcolor="#ffffff">$ {{unit.1}}</td>
+					<td width="80" align="center" bgcolor="#ffffff">{{unit.2}}</td>
+					<td width="100" align="center" bgcolor="#ffffff"><strong>$ {{unit.3}}</strong></td>
+				</tr>
+
+
+
+			{% endfor %}
+
+			<tr>
+				<!-- colspan="3" 合併3個欄位 -->
+				<td colspan="3" align="right" bgcolor="#ffffff" class="upline_text"><strong>小記</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline">$ {{total}}</td>
+			</tr>
+
+			<tr>
+				<td colspan="3" align="right" bgcolor="#ffffff" class="upline_text"><strong>運費</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline">$ 100</td>
+			</tr>
+
+			<tr>
+				<td colspan="3" align="right" bgcolor="#ffffff" class="upline_text"><strong>總記</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline"><strong><font color="#ff0000">$ {{grandtotal}}</font></strong></td>
+			</tr>
+
+		</table>
+
+		<p class="subject">訂購者資料</p>
+		<table width="87%" border="0" align="center" cellpadding="4" cellspacing="0">
+			<tr>
+				<th width="100" align="center">資訊</th>
+				<th align="left">內容</th>
+			</tr>
+
+			<tr>
+				<td width="100" align="center" bgcolor="#ffffff"><strong>姓名</strong></td>
+				<td bgcolor="#ffffff"><input type="text" name="cuName" value="{{name}}" required /></td>
+			</tr>
+
+			<tr>
+				<td width="100" align="center" bgcolor="#ffffff"><strong>電話</strong></td>
+				<td bgcolor="#ffffff"><input type="text" name="cuPhone" value="{{phone}}" required /></td>
+			</tr>
+
+			<tr>
+				<td width="100" align="center" bgcolor="#ffffff"><strong>寄送地址</strong></td>
+				<td bgcolor="#ffffff"><input type="text" name="cuAddress" value="{{address}}" required /></td>
+			</tr>
+
+			<tr>
+				<td width="100" align="center" bgcolor="#ffffff"><strong>電子郵件</strong></td>
+				<td bgcolor="#ffffff"><input type="text" name="cuEmail" value="{{email}}" required /></td>
+			</tr>
+
+			<tr>
+				<td width="100" align="center" bgcolor="#ffffff"><strong>付款方式</strong></td>
+				<td bgcolor="#ffffff">
+					<input type="radio" name="payType" value="ATM轉帳" checked />ATM轉帳 <!-- checked 預選選項 -->
+					<input type="radio" name="payType" value="貨到付款" />貨到付款
+					<input type="radio" name="payType" value="信用卡" />信用卡
+				</td>
+			</tr>
+			
+		</table>
+
+		<div style="clear: both; margin-top: 20px;"></div>
+
+		<table border="0" style="padding-left: 65%;" align="center" cellpadding="10" cellspacing="0">
+			<tr>
+				<td><input class="shop" type="button" value="繼續購物" onClick="window.location='/product/'" /></td>
+				<td><input class="shop" type="button" value="修改購物車" onClick="window.location='/cart/'" /></td>
+				<td><input class="shop" type="submit" value="確認購物" /></td>
+			</tr>
+		</table>
+
+
+	</form>
+
+</div>
+
+{% endblock %}

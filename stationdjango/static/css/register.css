@@ -1,0 +1,49 @@
+#message{
+	margin-left: 34.5%;
+	
+
+}
+
+.contact_form{
+	border: 2.5px solid #ccc;
+	border-radius: 8px;
+	padding: 0.5em 0.6em;
+	font-size: 100%;
+	line-height: 1.15;
+	width: 420px;
+	margin-bottom: 60px;
+
+}
+
+.form-control{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.5em 0.6em;
+	font-size: 80%;
+	line-height: 1.25;
+	width: 400px;
+	
+	
+}
+
+.form-group{
+	margin: 2%;
+}
+
+.btn_submit{
+	background-color: #0000ff;
+	color: #ffffff;
+	padding: 0.5em 1em;
+	border: transparent; /* transparent 邊框線整個透明 */
+	font-size: 14px;
+	border-radius: 15px;
+	margin-left: 85%;
+}
+
+.subject{
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 3px;
+	margin-left: 5px;
+}
+

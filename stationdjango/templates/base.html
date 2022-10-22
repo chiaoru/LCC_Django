@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>{% block pageTitle %}{% endblock %}</title>
+	<link href="/static/css/base.css" rel="stylesheet" >
+	{% block css %}
+	{% endblock %}
+
+	{% block js %}
+	{% endblock %}
+</head>
+<body>
+
+	<div id="wrapper">
+
+		<div id="banner">
+			<img src="/static/images/logo.png" >
+
+			{% if request.session.isAlive %}
+
+			
+				<a href="/member/" class="member">會員管理</a>
+				<a href="/orderlist/" class="orderlist">我的訂單</a>
+				<a href="/logout/" class="login">登出</a>
+				{% block Welcome %}
+				{% endblock %}
+
+		
+			{% else %}
+				<a href="/login/" class="login">登入</a>
+			{% endif %}
+			
+			<a href="/register/" class="register">註冊</a>
+
+			
+		</div>
+
+		<div id="menu">
+			<!-- 
+				ul 項目符號
+			-->
+			<ul>
+				<li><a href="/">首頁</a></li>
+				<li><a href="/news">新聞</a></li>
+				<li><a href="/product/">產品</a></li>
+				<li><a href="/travel/">景點</a></li>
+				<li><a href="/contact/">聯絡我們</a></li>
+				
+				
+			</ul>
+		</div>
+
+		<div id="content">
+			{% block mainContent %}
+			{% endblock %}
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<span> 聯成電腦 - 站前 Django 示範 </span>
+
+	</div>
+
+</body>
+</html>

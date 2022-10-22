@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+我的訂單明細
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/cart.css" rel="stylesheet" >
+{% endblock %}
+
+{% block Welcome %}
+<p class="Cookie"> Hi! {{name}}</p>
+{% endblock %}
+
+{% block mainContent %}
+
+	<div style="margin-top: 50px;"></div>
+	<div id="maindiv">
+
+	<table width="90%" border="0" align="center" cellpadding="4" cellspacing="1" style="margin-bottom: 3%;">
+
+		<tr>
+			<th class="title">訂單資料</th>
+			<a href="/cartordercheck/" class="order" style="margin-left: 82%; font-size: 25px; font-weight: bold; color: #005499; padding-top: -20px;">訂單查詢</a>
+		</tr>
+	
+
+	
+
+	<table width="80%" border="0" align="center" cellpadding="4" cellspacing="1" style="margin-bottom: 3%;">
+
+		<tr>
+			<th width="100" align="center" bgcolor="#cccccc">訂單日期</th>
+			<th width="80" align="center" bgcolor="#cccccc">編號</th>
+			<th width="80" align="center" bgcolor="#cccccc">總額</th>
+			<th width="100" align="center" bgcolor="#cccccc">訂購人</th>
+			<th width="100" align="center" bgcolor="#cccccc">付款方式</th>
+		</tr>
+
+		{% for unit in order %}
+
+		<tr>
+			<td width="100" align="center" bgcolor="#ffffff">{{unit.create_date}}</td>
+			<td width="80" align="center" bgcolor="#ffffff">{{unit.id}}</td>
+			<td width="80" align="center" bgcolor="#ffffff">{{unit.grandtotal}}</td>
+			<td width="100" align="center" bgcolor="#ffffff">{{unit.guestName}}</td>
+			<td width="100" align="center" bgcolor="#ffffff">{{unit.payType}}</td>
+		</tr>
+
+		{% endfor %}
+
+	</table>
+
+{% endblock %}

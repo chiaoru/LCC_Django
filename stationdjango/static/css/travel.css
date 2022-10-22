@@ -1,0 +1,136 @@
+.info{
+	float:left; 
+	width:19.5%; 
+	height: 55%;
+	margin:1%;
+	margin-top: 30px;
+	
+	
+	margin-left: 3.5%;
+	border-radius: 15px; 
+
+}
+
+.info img{
+	margin: 3%;
+	margin-left: 9.5%;
+	width: 80%;
+	height: 60%;
+	
+	border-radius: 50%; 
+	border: 2.5px solid #522f60;
+}
+
+.info p{
+	height: 60px;
+	
+	font-size: 16px;
+	padding-left: 5%;
+	margin-bottom: -7px;
+	font-size: 19px;
+	margin-block-start: 0.5em;
+	margin-block-end: 2.5em;
+}
+
+
+#travelArea{
+	
+	padding-top: 35px;
+	margin-bottom: 50px;
+	width: 100%;
+	background-color: #f5edda;
+	
+}
+
+.formSearch{
+	width: 20%;
+	font-size: 25px;
+	font-weight: bold;
+	
+	position: absolute;
+	left: 2%;
+	top: 140px;
+	
+
+}
+/*
+#formSearch{
+	width: 30%;
+	height: 15%;
+	margin-left: 34.5%;
+
+	border-radius: 10px;
+	background-color: #ae7c4f;
+}
+
+#formSearch form{
+	height: 100px;
+	padding: 1%;
+	font-size: 18px;
+	padding: 1%;
+	border-radius: 15px;
+
+}
+
+*/
+
+@media only screen and (max-device-width: 1024px){
+
+.formSearch{
+	width: 30%;
+	font-size: 25px;
+	font-weight: bold;
+	
+	position: absolute;
+	left: 2%;
+	top: 140px;
+	
+
+}
+
+.info{
+	float:left; 
+	width:19.5%; 
+	height: 20%;
+	margin:1%;
+	margin-top: 3.5%;
+	
+	
+	margin-left: 3.5%;
+	border-radius: 15px; 
+
+}
+
+.info img{
+	margin: 2.5%;
+	margin-left: 6.5%;
+	width: 90%;
+	height: 50%;
+	
+	border-radius: 50%; 
+	border: 2.5px solid #522f60;
+}
+
+.info p{
+	height: 60px;
+	
+	font-size: 16px;
+	padding-left: 5%;
+	
+	font-size: 19px;
+	margin-block-start: 0.5em;
+	margin-block-end: 2.5em;
+}
+
+#travelArea{
+	
+	padding-top: 25px;
+	margin-bottom: 60px;
+	width: 100%;
+	background-color: #f5edda;
+	
+}
+
+
+
+}
